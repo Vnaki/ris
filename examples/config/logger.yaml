@@ -1,0 +1,14 @@
+# 日志级别, disable|fatal|error|warn|info|debug
+level: debug
+# 文件名前缀
+prefix: log
+# 日志路径
+path: ./logs
+# 链接名称
+link: latest
+# 文件大小
+size: 2048
+# 日志权限
+perm: 0666
+# 是否按天切割
+daily: true

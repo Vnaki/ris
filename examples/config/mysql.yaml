@@ -1,0 +1,16 @@
+# 单机地址
+host: mall.pg
+# 用户账号
+user: postgres
+# 账号密码
+password: 123456
+# 数据库名
+database: mall
+# 最大空闲连接
+min_idle_connections: 3
+# 最大打开连接
+max_open_connections: 500
+# 最大连接时长,单位小时
+max_lifetime: 12
+# 事务尝试次数
+max_transaction_retries: 3

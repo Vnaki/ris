@@ -1,42 +1,3 @@
-# ris - 基于iris的插件式框架
-
-**Iris framework for plug-in design, super easy to use！**
-
-### Quick Start
-
-```go 
-
-package main
-
-import (
-	"github.com/vnaki/ris"
-	"github.com/vnaki/ris/examples/routes"
-	"github.com/vnaki/ris/middlewares"
-	"github.com/vnaki/ris/plugins"
-)
-
-func main()  {
-	e := ris.New()
-
-	e.RouteMiddleware(middlewares.Cors)
-
-	e.Plugin("logger", plugins.LoggerPlugin)
-	//e.Plugin("data", plugins.MysqlPlugin)
-	e.Plugin("data", plugins.SqlitePlugin)
-
-	// default module
-	e.Module("/", routes.ApiRoute)
-
-	if err := e.Run("./config/app.yaml"); err != nil {
-		panic(err)
-	}
-}
-
-```
-
-### Engine methods
-
-```go 
 package types
 
 import (
@@ -45,11 +6,6 @@ import (
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/mvc"
 )
-
-// 数据库接口
-type Database interface {
-	Connect() (db.Session, error)
-}
 
 // PluginHandler 插件函数
 type PluginHandler func(string, Engine) error
@@ -123,47 +79,3 @@ type Engine interface {
 	// Parse 解析配置
 	Parse(file string, out interface{}) error
 }
-
-```
-
-### Plugin definition
-
-```go 
-package plugins
-
-import (
-	"fmt"
-	"github.com/vnaki/ris/components/database"
-	"github.com/vnaki/ris/types"
-)
-
-func MysqlPlugin(name string, e types.Engine) error {
-	n := database.New()
-
-	if err := e.Parse(e.Config().Mysql, n); err != nil {
-		return err
-	}
-
-	sess, err := n.Connect()
-	if err != nil {
-		return err
-	}
-
-	e.Set(name, sess)
-
-	e.Defer(func() {
-		_ = sess.Close()
-
-		// verbose
-		fmt.Println("defer: mysql closed")
-	})
-
-	return nil
-}
-
-```
-
-### Framework Dependency
-
-- `iris` framework, see [https://github.com/kataras/iris](https://github.com/kataras/iris)
-- `upper` orm, see [https://github.com/upper/db](https://github.com/upper/db)

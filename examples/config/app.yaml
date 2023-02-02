@@ -1,0 +1,18 @@
+# 应用名称
+name: ris-examples
+# 开发测试环境, dev/pro
+mode: dev
+# 版本信息
+version: 0.0.1
+
+# listen
+listen: ":8800"
+
+# data
+mysql: ./config/mysql.yaml
+sqlite: ./config/sqlite.yaml
+
+# log level, disable|fatal|error|warn|info|debug
+level: debug
+# log config
+logger: ./config/logger.yaml
