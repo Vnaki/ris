@@ -1,6 +1,6 @@
 # ris - 基于iris的插件式框架
 
-**Iris framework for plug-in design, super easy to use！**
+**ris**是对**Iris**框架进一步插件式封装，定义和组合了组件、插件、中间件、日志、测试、全局实例等，方便开发者快速开发和调试，期待您的星星🌟🌟🌟🌟🌟🌟。
 
 ### 快速开始
 
@@ -176,3 +176,7 @@ func MysqlPlugin(name string, e types.Engine) error {
 
 - `iris` framework, see [https://github.com/kataras/iris](https://github.com/kataras/iris)
 - `upper` orm, see [https://github.com/upper/db](https://github.com/upper/db)
+
+### 期待赞助
+
+有了您的赞助👑，我们可以加快**ris**的设计和开发进度，为用户提供更高质量的软件，期待合作~
