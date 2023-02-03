@@ -6,7 +6,7 @@ import (
 )
 
 type SQLiteDatabase struct {
-	Database string `yaml:"data"`
+	Database string `yaml:"database"`
 }
 
 func NewSQLite() *SQLiteDatabase {

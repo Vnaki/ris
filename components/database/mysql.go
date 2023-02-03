@@ -11,7 +11,7 @@ type Database struct {
 	Host                  string `yaml:"host"`
 	User                  string `yaml:"user"`
 	Password              string `yaml:"password"`
-	Database              string `yaml:"data"`
+	Database              string `yaml:"database"`
 	MaxLifetime           int    `yaml:"max_lifetime"`
 	MinIdleConnections    int    `yaml:"min_idle_connections"`
 	MaxOpenConnections    int    `yaml:"max_open_connections"`
