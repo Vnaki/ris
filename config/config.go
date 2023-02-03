@@ -17,6 +17,8 @@ type Config struct {
 	Mysql string `yaml:"mysql"`
 	// SQLITE配置
 	Sqlite string `yaml:"sqlite"`
+	// 业务配置
+	Business string `yaml:"business"`
 }
 
 func New() *Config {
@@ -29,5 +31,6 @@ func New() *Config {
 		Logger: "./config/logger.yaml",
 		Mysql: "./config/mysql.yaml",
 		Sqlite: "./config/sqlite.yaml",
+		Business: "./config/business.yaml",
 	}
 }

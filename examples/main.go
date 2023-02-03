@@ -10,6 +10,9 @@ import (
 func main()  {
 	e := ris.New()
 
+	// post max memory
+	e.SetPostMemory(20 << 20)
+
 	e.RouteMiddleware(middlewares.Cors)
 
 	e.Plugin("logger", plugins.LoggerPlugin)

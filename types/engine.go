@@ -44,6 +44,8 @@ type Engine interface {
 	App() *iris.Application
 	// Set 注册实例
 	Set(name string, component Component)
+	// SetPostMemory 设置POST最大内存
+	SetPostMemory(memory int64)
 	// Get 返回实例
 	Get(name string) Component
 	// Reset 重置配置

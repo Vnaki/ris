@@ -8,11 +8,14 @@ version: 0.0.1
 # listen
 listen: ":8800"
 
-# data
+# 数据库
 mysql: ./config/mysql.yaml
 sqlite: ./config/sqlite.yaml
 
-# log level, disable|fatal|error|warn|info|debug
+# 日志级别, disable|fatal|error|warn|info|debug
 level: debug
-# log config
+# 日志配置
 logger: ./config/logger.yaml
+
+# 业务配置
+business: ./config/business.yaml

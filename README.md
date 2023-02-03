@@ -2,7 +2,7 @@
 
 **Iris framework for plug-in design, super easy to use！**
 
-### Quick Start
+### 快速开始
 
 ```go 
 
@@ -17,6 +17,9 @@ import (
 
 func main()  {
 	e := ris.New()
+
+	// post max memory
+	e.SetPostMemory(20 << 20)
 
 	e.RouteMiddleware(middlewares.Cors)
 
@@ -34,7 +37,11 @@ func main()  {
 
 ```
 
-### Engine methods
+### 详细用例
+
+see [examples](https://github.com/vnaki/ris/tree/master/examples)
+
+### 框架定义
 
 ```go 
 package types
@@ -46,7 +53,7 @@ import (
 	"github.com/kataras/iris/v12/mvc"
 )
 
-// 数据库接口
+// Database 数据库接口
 type Database interface {
 	Connect() (db.Session, error)
 }
@@ -88,6 +95,8 @@ type Engine interface {
 	App() *iris.Application
 	// Set 注册实例
 	Set(name string, component Component)
+    // SetPostMemory 设置POST最大内存
+	SetPostMemory(memory int64)
 	// Get 返回实例
 	Get(name string) Component
 	// Reset 重置配置
@@ -126,7 +135,7 @@ type Engine interface {
 
 ```
 
-### Plugin definition
+### 插件定义
 
 ```go 
 package plugins
@@ -163,7 +172,7 @@ func MysqlPlugin(name string, e types.Engine) error {
 
 ```
 
-### Framework Dependency
+### 框架依赖
 
 - `iris` framework, see [https://github.com/kataras/iris](https://github.com/kataras/iris)
 - `upper` orm, see [https://github.com/upper/db](https://github.com/upper/db)

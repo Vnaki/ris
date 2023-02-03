@@ -21,7 +21,7 @@ var IrisConfig = iris.Configuration{
 	// 是否路径和参数自动转义
 	EnablePathEscape: true,
 	// 尝试优化程序
-	EnableOptimizations: true,
+	// EnableOptimizations: true,
 	// 是否将不支持的方法以405代替404
 	FireMethodNotAllowed: false,
 	// 是否报错`iris.ErrEmptyForm`,如果读`context.ReadBody/ReadForm`空数据

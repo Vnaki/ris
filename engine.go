@@ -52,6 +52,10 @@ func (e *Engine) Set(name string, component types.Component) {
 	e.components[name] = component
 }
 
+func (e *Engine) SetPostMemory(memory int64) {
+	config.IrisConfig.PostMaxMemory = memory
+}
+
 func (e *Engine) Get(name string) types.Component {
 	if value, ok := e.components[name]; ok {
 		return value
