@@ -38,7 +38,7 @@ func New() *Logger {
 		Size:   1024,
 		Perm:   0666,
 		Prefix: "log",
-		layout: "200601021504",
+		layout: "20060102",
 	}
 }
 
