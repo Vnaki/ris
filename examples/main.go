@@ -7,7 +7,7 @@ import (
 	"github.com/vnaki/ris/plugins"
 )
 
-func main()  {
+func main() {
 	e := ris.New()
 
 	// post max memory
@@ -16,8 +16,8 @@ func main()  {
 	e.RouteMiddleware(middlewares.Cors)
 
 	e.Plugin("logger", plugins.LoggerPlugin)
-	//e.Plugin("data", plugins.MysqlPlugin)
-	e.Plugin("data", plugins.SqlitePlugin)
+	e.Plugin("sqlite", plugins.SqlitePlugin)
+	e.Plugin("mysql", plugins.MysqlPlugin)
 
 	// default module
 	e.Module("/", routes.ApiRoute)

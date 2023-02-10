@@ -45,10 +45,6 @@ func (c *Database) Connect() (db.Session, error) {
 		return nil, err
 	}
 
-	//db.LC().SetLevel()
-	//db.LC().SetLogger(app.Logger())
-
-	//sess.LC().SetLogger(&customLogger{})
 	sess.SetMaxIdleConns(c.MinIdleConnections)
 	sess.SetMaxOpenConns(c.MaxOpenConnections)
 	sess.SetMaxTransactionRetries(c.MaxTransactionRetries)

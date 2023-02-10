@@ -1,7 +1,7 @@
 # 单机地址
-host: mall.pg
+host: 127.0.0.1:3306
 # 用户账号
-user: postgres
+user: root
 # 账号密码
 password: 123456
 # 数据库名
